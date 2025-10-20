@@ -1,0 +1,37 @@
+[
+    {
+        "indice": 1,
+        "sucesso": true,
+        "dataHora": "2024-01-15T14:30:00.000Z",
+        "timestamp": "15\/01\/2024 11:30:00",
+        "fase": "Fase 3 - Dados Pessoais"
+    },
+    {
+        "indice": 2,
+        "sucesso": true,
+        "dataHora": "2024-01-15T15:45:00.000Z",
+        "timestamp": "15\/01\/2024 12:45:00",
+        "fase": "Fase 3 - Dados Pessoais"
+    },
+    {
+        "indice": 3,
+        "sucesso": true,
+        "dataHora": "2025-10-19T23:42:48.482Z",
+        "timestamp": "19\/10\/2025, 20:42:48",
+        "fase": "Fase 3 - Dados Pessoais"
+    },
+    {
+        "indice": 4,
+        "sucesso": true,
+        "dataHora": "2025-10-19T23:44:06.344Z",
+        "timestamp": "19\/10\/2025, 20:44:06",
+        "fase": "Fase 3 - Dados Pessoais"
+    },
+    {
+        "sucesso": true,
+        "dataHora": "2025-10-19T23:52:04.901Z",
+        "timestamp": "19\/10\/2025, 20:52:04",
+        "fase": "Fase 3 - Dados Pessoais",
+        "indice": 5
+    }
+]
