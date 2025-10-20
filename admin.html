@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Visualizar Logs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold mb-6">📊 Logs da Pesquisa</h1>
+        
+        <button id="refreshBtn" class="bg-blue-500 text-white px-4 py-2 rounded mb-4">
+            🔄 Atualizar Logs
+        </button>
+        
+        <div id="stats" class="bg-white p-4 rounded-lg mb-6">
+            <p><strong>Total de Participações:</strong> <span id="total">0</span></p>
+        </div>
+        
+        <div id="logs" class="space-y-4">
+            <!-- Logs serão carregados aqui -->
+        </div>
+    </div>
+
+    <script>
+        async function loadLogs() {
+            try {
+                const response = await fetch('api/get-logs.js');
+                const data = await response.json();
+                
+                if (data.success) {
+                    document.getElementById('total').textContent = data.total;
+                    
+                    const logsContainer = document.getElementById('logs');
+                    logsContainer.innerHTML = '';
+                    
+                    data.logs.forEach(log => {
+                        const logDiv = document.createElement('div');
+                        logDiv.className = 'bg-white p-4 rounded-lg shadow';
+                        logDiv.innerHTML = `
+                            <div class="flex justify-between items-start mb-2">
+                                <span class="font-bold text-blue-600">Participação #${log.indice || 'N/A'}</span>
+                                <span class="text-sm text-gray-500">${log.timestamp}</span>
+                            </div>
+                            <div class="text-sm text-gray-600">
+                                <p><strong>Data:</strong> ${log.dataHora}</p>
+                                <p><strong>Fase:</strong> ${log.fase}</p>
+                                <p><strong>Status:</strong> ${log.sucesso ? '✅ Sucesso' : '❌ Erro'}</p>
+                            </div>
+                        `;
+                        logsContainer.appendChild(logDiv);
+                    });
+                }
+            } catch (error) {
+                console.error('Erro ao carregar logs:', error);
+            }
+        }
+        
+        document.getElementById('refreshBtn').addEventListener('click', loadLogs);
+        
+        // Carregar logs automaticamente
+        loadLogs();
+    </script>
+</body>
+</html>

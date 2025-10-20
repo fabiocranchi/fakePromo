@@ -20,8 +20,8 @@ if (!$newEntry) {
     exit;
 }
 
-// Caminho para o arquivo log.json
-$logFile = 'log.json';
+// Caminho para o arquivo log.json (garantir permissões)
+$logFile = __DIR__ . '/log.json';
 
 // Ler dados existentes
 $existingLogs = [];
@@ -54,6 +54,7 @@ if ($result === false) {
 echo json_encode([
     'success' => true,
     'message' => 'Log entry added successfully',
-    'totalEntries' => count($existingLogs)
+    'totalEntries' => count($existingLogs),
+    'newIndex' => $newEntry['indice']
 ]);
 ?>
