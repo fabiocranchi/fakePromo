@@ -96,7 +96,7 @@ fakePromo/
 Para garantir que os arquivos não foram modificados, aqui estão os hashes SHA256:
 
 ```
-index.html:     22b0e24809732a2b0e0cd38db5b498485110b92ff44a8ff1de567d733d804f31
+index.html:     f9cb03c99259cb0631d14eb37a7912ab80ef8e9e2f35570c3bfb6de6747585c2
 log.php:        35a245d1462f33d4e0f6cceafbdd79399a95372bedbae0c9dcac68cc10077100
 consulta.html:  64f81677c15970b4f3f127bfeea4a2ad1707427bc6ba6c99407ffda26835c287
 consulta.php:   cbbb75c435c14c1f3c0b14352b35a90b0da88977cdee692572b7d33afea0c4d0
